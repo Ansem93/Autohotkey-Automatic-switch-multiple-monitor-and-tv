@@ -1,0 +1,57 @@
+#Requires Autohotkey 2
+
+; Path to executible
+global MonitorSwitcher := "C:\Program Files (x86)\MonitorProfileSwitcher_v0700\MonitorSwitcher.exe"
+global ProfilePath := "C:\Users\[YOUR USER]\AppData\Roaming\MonitorSwitcher\Profiles"
+global PlayniteDesktop := "C:\Users\[YOUR USER]\AppData\Local\Playnite\Playnite.DesktopApp.exe"
+global PlayniteFullscreen := "C:\Users\[YOUR USER]\AppData\Local\Playnite\Playnite.FullscreenApp.exe"
+global Whatsapp := [PATH TO WHATSAPP]
+global Discord := "C:\Users\[YOUR USER]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord"
+
+ChangeMonitor() ; call the function
+
+ChangeMonitor(){
+    static TV := false
+    static failedPings := 0
+    strComputer := "."
+    objWMIService := ComObjGet("winmgmts:{impersonationLevel=impersonate}!\\" . strComputer . "\root\cimv2")
+
+    colPings := objWMIService.ExecQuery("Select * From Win32_PingStatus where Address = '[TV IP]'")
+
+    for objStatus in colPings {
+        If (objStatus.StatusCode="" || objStatus.StatusCode != 0) {
+            ; the tv doesn't answer so increase the counter
+            failedPings += 1
+
+            ; if the tv doesn't answer for 3 ping it means it's turned off so switch to desk if the profile is TV
+            if failedPings >= 3 && TV {
+                RunWait MonitorSwitcher " -load:" ProfilePath "\desk.xml", , "Hide"
+                Sleep(2000)
+                RunWait PlayniteDesktop
+                Run Whatsapp
+                Run Discord
+                TV := false
+                failedPings := 0  ; Reset del contatore
+            }
+        }
+        Else {
+            ; the tv has answered, so 0 failed ping
+            failedPings := 0
+
+            ; if the current profile is deks, switch to TV
+            if !TV {
+                Run "taskkill /im Whatsapp.exe /f"
+                Run "taskkill /im Discord.exe /f"
+                Sleep(1000)
+                RunWait MonitorSwitcher " -load:" ProfilePath "\televisione.xml", , "Hide"
+				Sleep(2000)
+                RunWait PlayniteFullscreen
+                TV := true
+            }
+        }
+    }
+    SetTimer(ChangeMonitor, -2000) ; ping every 2000 ms
+}
+
+;Force stop the script
+f7:: Pause
