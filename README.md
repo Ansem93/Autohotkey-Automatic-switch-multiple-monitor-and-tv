@@ -1,0 +1,1 @@
+# Autohotkey-automaticcaly-switch-double-monitor-and-tv
