@@ -2,7 +2,6 @@
 
 Hi!
 I created this script for AutoHotKey 2 to switch back and forth between my TV and my desk.
-The main issue to made it automatic was that my TV was keeping the HDMI always active, so I had to use the ping to check if it was actually turned on.
 
 What the script does is straight forward:
 - If the TV respond to ping: 
@@ -15,6 +14,8 @@ What the script does is straight forward:
    3) Open the selected app
    4) Open Playnite in desktop mode
 - In case something goes wrong press F7 to stop the script
+
+Why the ping? Because my TV keep the HDMI always active even when turned off, so to Windows it's always turned ON. 
 
 
 1) First off you need monitor profile switcher and autohotkey:
