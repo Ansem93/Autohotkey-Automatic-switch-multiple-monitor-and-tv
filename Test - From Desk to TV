@@ -1,0 +1,8 @@
+;Macro to switch from desk to TV by pressing ctrl+shift+alt+t
+^+!t:: {
+	Run "taskkill /im Discord.exe /f"
+	Sleep(1000)
+; assign ctrl+shift+alt+8 to the TV profile
+	Send('^+!8')
+	Run "C:\Users\[YOUR USER]\AppData\Local\Playnite\Playnite.FullscreenApp.exe"
+}
