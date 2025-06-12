@@ -30,6 +30,7 @@ https://www.autohotkey.com/
 In all the files there are a few data that you need to compile, I put it between [] 
 
 I juggest to use the test files before the script just to be sure everything works properly.
+They also can be usefull if you prefer to manually activate the profiles
 I also use Unified Remote for Android to launch manually in case something went wrong
 
 
