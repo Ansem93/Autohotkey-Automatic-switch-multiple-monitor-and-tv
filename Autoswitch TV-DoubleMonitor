@@ -5,7 +5,7 @@ global MonitorSwitcher := "C:\Program Files (x86)\MonitorProfileSwitcher_v0700\M
 global ProfilePath := "C:\Users\[YOUR USER]\AppData\Roaming\MonitorSwitcher\Profiles"
 global PlayniteDesktop := "C:\Users\[YOUR USER]\AppData\Local\Playnite\Playnite.DesktopApp.exe"
 global PlayniteFullscreen := "C:\Users\[YOUR USER]\AppData\Local\Playnite\Playnite.FullscreenApp.exe"
-global Whatsapp := [PATH TO WHATSAPP]
+global Whatsapp := "C:\Program Files\AutoHotkey\links\Whatsapp"
 global Discord := "C:\Users\[YOUR USER]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord"
 
 ChangeMonitor() ; call the function
