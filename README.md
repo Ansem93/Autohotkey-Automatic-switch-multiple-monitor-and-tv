@@ -25,7 +25,7 @@ https://www.autohotkey.com/
  - If you want to use the test script assign them the shortcut ctr+alt+shift+8 and ctr+alt+shift+9
 3) Create the folder Links inside the autohotkey directory ("C:\Program Files\AutoHotkey).
 4) Copy the whatsapp shortcut in it, if you want also other apps you want to open
-5) Assign a fixed IP to the TV
+5) Assign a static IP to the TV
    
 In all the files there are a few data that you need to compile, I put it between [] 
 
