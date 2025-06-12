@@ -1,5 +1,5 @@
 #Requires Autohotkey 2
-
+; Also requires Monitor Profile Switcher
 ; Path to executible
 global MonitorSwitcher := "C:\Program Files (x86)\MonitorProfileSwitcher_v0700\MonitorSwitcher.exe"
 global ProfilePath := "C:\Users\[YOUR USER]\AppData\Roaming\MonitorSwitcher\Profiles"
@@ -27,7 +27,7 @@ ChangeMonitor(){
             if failedPings >= 3 && TV {
                 RunWait MonitorSwitcher " -load:" ProfilePath "\desk.xml", , "Hide"
                 Sleep(2000)
-                RunWait PlayniteDesktop
+                Run PlayniteDesktop
                 Run Whatsapp
                 Run Discord
                 TV := false
@@ -45,7 +45,7 @@ ChangeMonitor(){
                 Sleep(1000)
                 RunWait MonitorSwitcher " -load:" ProfilePath "\televisione.xml", , "Hide"
 				Sleep(2000)
-                RunWait PlayniteFullscreen
+                Run PlayniteFullscreen
                 TV := true
             }
         }
