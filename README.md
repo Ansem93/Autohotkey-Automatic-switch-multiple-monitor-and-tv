@@ -21,7 +21,7 @@ Why the ping? Because my TV keep the HDMI always active even when turned off, so
 1) First off you need monitor profile switcher and autohotkey:
 https://sourceforge.net/projects/monitorswitcher/
 https://www.autohotkey.com/
-3) create 2 profiles: desk and TV
+3) create 2 profiles: desk and TV based on what you need. My desk profile has the TV (monitor 3 for Windows) disabled while TV has Monitor 1 and 2 disabled to keep only TV turned on 
  - If you want to use the test script assign them the shortcut ctr+alt+shift+8 and ctr+alt+shift+9
 3) Create the folder Links inside the autohotkey directory ("C:\Program Files\AutoHotkey).
 4) Copy the whatsapp shortcut in it, if you want also other apps you want to open
