@@ -1,0 +1,8 @@
+; return from TV to Desk by pressing ctrl+shift+alt+d
+^+!d:: {
+;	set ctrl+shift+alt+9 as shortcut on monitor profile switcher
+	Send('^+!9')
+    Sleep(1000)
+    Run('C:\Users\[YOUR USER]\AppData\Local\Playnite\Playnite.DesktopApp.exe')
+	Run('C:\Users\[YOUR USER]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord')
+}
